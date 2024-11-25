@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>เครื่องคิดเลขอัจฉริยะ</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="calculator">
+        <h1>เครื่องคิดเลขอัจฉริยะ</h1>
+
+        <div class="tabs">
+            <button class="tab active" data-tab="basic">พื้นฐาน</button>
+            <button class="tab" data-tab="equation">สมการ</button>
+            <button class="tab" data-tab="advanced">ขั้นสูง</button>
+        </div>
+
+        <div class="alert" id="alert"></div>
+
+        <!-- Basic Calculator Section -->
+        <div class="calculator-section active" id="basic-section">
+            <div class="input-group">
+                <label for="number1">ตัวเลขที่ 1:</label>
+                <input type="number" id="number1" step="any" placeholder="ใส่ตัวเลข">
+            </div>
+
+            <div class="input-group">
+                <label for="number2">ตัวเลขที่ 2:</label>
+                <input type="number" id="number2" step="any" placeholder="ใส่ตัวเลข">
+            </div>
+
+            <div class="operations" id="operations">
+                <button class="operation-btn active" data-operation="add">บวก (+)</button>
+                <button class="operation-btn" data-operation="subtract">ลบ (-)</button>
+                <button class="operation-btn" data-operation="multiply">คูณ (×)</button>
+                <button class="operation-btn" data-operation="divide">หาร (÷)</button>
+            </div>
+
+            <button onclick="calculateBasic()">คำนวณ</button>
+        </div>
+
+        <!-- Equation Solver Section -->
+        <div class="calculator-section" id="equation-section">
+            <div class="input-group">
+                <label for="equation">ใส่สมการ:</label>
+                <input type="text" id="equation" placeholder="เช่น 2x + 3 = 7, 5m - 2 = 13" autocomplete="off">
+            </div>
+
+            <button onclick="solveEquation()">แก้สมการ</button>
+        </div>
+
+        <!-- Advanced Calculator Section -->
+        <div class="calculator-section" id="advanced-section">
+            <div class="input-group">
+                <label for="advanced-number1">ตัวเลขที่ 1:</label>
+                <input type="number" id="advanced-number1" step="any" placeholder="ใส่ตัวเลข">
+            </div>
+
+            <div class="input-group">
+                <label for="advanced-number2">ตัวเลขที่ 2:</label>
+                <input type="number" id="advanced-number2" step="any" placeholder="ใส่ตัวเลข">
+            </div>
+
+            <div class="operations">
+                <button class="operation-btn" data-operation="power">ยกกำลัง</button>
+                <button class="operation-btn" data-operation="root">รากที่ n</button>
+                <button class="operation-btn" data-operation="log">ลอการิทึม</button>
+                <button class="operation-btn" data-operation="fraction">เศษส่วน</button>
+            </div>
+
+            <button onclick="calculateAdvanced()">คำนวณ</button>
+        </div>
+
+        <div class="result" id="result">
+            <div id="answer"></div>
+            <div class="steps" id="steps"></div>
+        </div>
+    </div>
+
+    <script src="srcipt.js"></script>
+</body>
+</html>
